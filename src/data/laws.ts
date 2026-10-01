@@ -1,0 +1,212 @@
+import type { Law, Update, DocumentRecord } from "./types";
+
+export const LAWS: Law[] = [
+  {
+    slug: "nepal-ip-laws",
+    name: "Nepal IP Legislation",
+    jurisdiction: "Nepal",
+    jurisdictionSlug: "nepal",
+    type: "Statute",
+    subjectMatter: "Industrial property (trademarks, patents, industrial designs, geographical indications) and copyright in Nepal.",
+    date: null,
+    administeringBody: "Verification required",
+    officialSource: null,
+    verification: "Verification required",
+    relatedRights: ["trademarks", "patents", "industrial-designs", "copyright", "geographical-indications"],
+    notes: "Specific statute titles, dates, provisions and amendments require verification directly from the Government of Nepal.",
+  },
+  {
+    slug: "trips-agreement-law",
+    name: "Agreement on Trade-Related Aspects of Intellectual Property Rights (TRIPS)",
+    jurisdiction: "International",
+    jurisdictionSlug: null,
+    type: "Statute",
+    subjectMatter: "Multilateral IP and trade agreement establishing minimum standards of IP protection.",
+    date: "1994-04-15",
+    administeringBody: "World Trade Organization",
+    officialSource: "https://www.wto.org/english/tratop_e/trips_e/trips_e.htm",
+    verification: "Verified",
+    relatedRights: ["trademarks", "patents", "industrial-designs", "copyright", "geographical-indications", "trade-secrets"],
+    notes: "In force 1 January 1995.",
+  },
+  {
+    slug: "paris-convention-law",
+    name: "Paris Convention for the Protection of Industrial Property",
+    jurisdiction: "International",
+    jurisdictionSlug: null,
+    type: "Statute",
+    subjectMatter: "International treaty covering patents, trademarks, industrial designs and indications of source.",
+    date: "1883-03-20",
+    administeringBody: "WIPO",
+    officialSource: "https://www.wipo.int/treaties/en/ip/paris/",
+    verification: "Verified",
+    relatedRights: ["patents", "trademarks", "industrial-designs", "geographical-indications"],
+    notes: "Adopted 1883, entered into force 1884.",
+  },
+  {
+    slug: "berne-convention-law",
+    name: "Berne Convention for the Protection of Literary and Artistic Works",
+    jurisdiction: "International",
+    jurisdictionSlug: null,
+    type: "Statute",
+    subjectMatter: "International treaty governing copyright.",
+    date: "1886-09-09",
+    administeringBody: "WIPO",
+    officialSource: "https://www.wipo.int/treaties/en/ip/berne/",
+    verification: "Verified",
+    relatedRights: ["copyright"],
+    notes: "Adopted 1886.",
+  },
+];
+
+export function getLaw(slug: string) {
+  return LAWS.find((l) => l.slug === slug);
+}
+
+export const UPDATES: Update[] = [
+  {
+    slug: "update-wipo-classification-revision",
+    title: "International IP Classification Systems — Periodic Revision",
+    date: null,
+    summary:
+      "International IP classification systems (Nice, Vienna, Locarno, IPC) are periodically revised by WIPO Committees of Experts. Verify the current edition directly with WIPO before relying on specific class codes.",
+    category: "Classification",
+    verification: "Verified",
+    source: "https://www.wipo.int/classifications/en/",
+    relatedRights: ["trademarks", "patents", "industrial-designs"],
+  },
+  {
+    slug: "update-nepal-treaty-status",
+    title: "Nepal Treaty Participation — Verification Required",
+    date: null,
+    summary:
+      "Nepal's precise participation status under the principal international IP treaties (Paris, Berne, PCT, TRIPS, Madrid, Hague, Budapest, Rome, WCT, WPPT) requires verification from authoritative sources (WIPO treaties database, WTO member list, Government of Nepal). KIPLAN IP does not publish unverified status claims.",
+    category: "Nepal IP",
+    verification: "Verification required",
+    source: null,
+    relatedRights: null,
+  },
+  {
+    slug: "update-pct-system",
+    title: "Patent Cooperation Treaty — Structural Note",
+    date: null,
+    summary:
+      "The PCT (1970) provides a unified procedure for filing patent applications across contracting states, with international search and optional preliminary examination. Verify current PCT contracting states and procedures directly with WIPO.",
+    category: "International IP",
+    verification: "Verified",
+    source: "https://www.wipo.int/pct/en/",
+    relatedRights: ["patents"],
+  },
+  {
+    slug: "update-madrid-system",
+    title: "Madrid System — Structural Note",
+    date: null,
+    summary:
+      "The Madrid System (Madrid Agreement 1891 + Madrid Protocol 1989) allows trademark owners to seek protection in multiple jurisdictions through a single international application. Verify current Madrid members and procedural details directly with WIPO.",
+    category: "International IP",
+    verification: "Verified",
+    source: "https://www.wipo.int/madrid/en/",
+    relatedRights: ["trademarks"],
+  },
+];
+
+export function getUpdate(slug: string) {
+  return UPDATES.find((u) => u.slug === slug);
+}
+
+export const DOCUMENTS: DocumentRecord[] = [
+  {
+    slug: "paris-convention-text",
+    title: "Paris Convention — Official Text",
+    type: "Treaty Text",
+    issuer: "WIPO",
+    date: "1883-03-20",
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wipo.int/treaties/en/ip/paris/",
+    verification: "Verified",
+    relatedTreaty: "paris-convention",
+    notes: "Publicly available authoritative treaty text.",
+  },
+  {
+    slug: "berne-convention-text",
+    title: "Berne Convention — Official Text",
+    type: "Treaty Text",
+    issuer: "WIPO",
+    date: "1886-09-09",
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wipo.int/treaties/en/ip/berne/",
+    verification: "Verified",
+    relatedTreaty: "berne-convention",
+    notes: "Publicly available authoritative treaty text.",
+  },
+  {
+    slug: "pct-text",
+    title: "Patent Cooperation Treaty — Official Text",
+    type: "Treaty Text",
+    issuer: "WIPO",
+    date: "1970-06-19",
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wipo.int/pct/en/",
+    verification: "Verified",
+    relatedTreaty: "pct",
+    notes: "Publicly available authoritative treaty text.",
+  },
+  {
+    slug: "trips-text",
+    title: "TRIPS Agreement — Official Text",
+    type: "Treaty Text",
+    issuer: "WTO",
+    date: "1994-04-15",
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wto.org/english/tratop_e/trips_e/trips_e.htm",
+    verification: "Verified",
+    relatedTreaty: "trips",
+    notes: "Publicly available authoritative treaty text.",
+  },
+  {
+    slug: "nice-classification-text",
+    title: "Nice Classification — Current Edition",
+    type: "Classification List",
+    issuer: "WIPO",
+    date: null,
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wipo.int/classifications/nice/en/",
+    verification: "Verified",
+    notes: "Verify current edition directly with WIPO.",
+  },
+  {
+    slug: "ipc-classification-text",
+    title: "International Patent Classification — Current Version",
+    type: "Classification List",
+    issuer: "WIPO",
+    date: null,
+    jurisdiction: "International",
+    sourceTier: "tier-1-official",
+    url: "https://www.wipo.int/classifications/ipc/en/",
+    verification: "Verified",
+    notes: "Verify current version directly with WIPO.",
+  },
+  {
+    slug: "nepal-ip-law-doc",
+    title: "Nepal IP Legislation — Official Text",
+    type: "Statute",
+    issuer: "Government of Nepal",
+    date: null,
+    jurisdiction: "Nepal",
+    sourceTier: "tier-1-official",
+    url: null,
+    verification: "Verification required",
+    relatedTreaty: null,
+    relatedRight: null,
+    notes: "Specific statute titles, dates and provisions require verification directly with the Government of Nepal.",
+  },
+];
+
+export function getDocument(slug: string) {
+  return DOCUMENTS.find((d) => d.slug === slug);
+}

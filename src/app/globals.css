@@ -1,0 +1,812 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* KIPLAN IP — Light mode: warm ivory / deep ink / amber */
+:root {
+  --radius: 0.5rem;
+  /* Warm ivory background */
+  --background: oklch(0.965 0.012 80);
+  /* Deep ink foreground */
+  --foreground: oklch(0.18 0.01 80);
+  /* Pure ivory card */
+  --card: oklch(0.985 0.008 80);
+  --card-foreground: oklch(0.18 0.01 80);
+  --popover: oklch(0.985 0.008 80);
+  --popover-foreground: oklch(0.18 0.01 80);
+  /* Primary = deep ink (for buttons, dark surfaces) */
+  --primary: oklch(0.18 0.01 80);
+  --primary-foreground: oklch(0.985 0.008 80);
+  /* Secondary = warm muted surface */
+  --secondary: oklch(0.92 0.012 80);
+  --secondary-foreground: oklch(0.18 0.01 80);
+  /* Muted = warm gray */
+  --muted: oklch(0.88 0.012 80);
+  --muted-foreground: oklch(0.48 0.015 80);
+  /* Accent = refined amber/bronze */
+  --accent: oklch(0.62 0.13 65);
+  --accent-foreground: oklch(0.985 0.008 80);
+  --destructive: oklch(0.55 0.18 25);
+  /* Hairline border */
+  --border: oklch(0.88 0.01 80 / 60%);
+  --input: oklch(0.88 0.01 80 / 80%);
+  --ring: oklch(0.62 0.13 65);
+  /* Chart palette — all amber-toned */
+  --chart-1: oklch(0.62 0.13 65);
+  --chart-2: oklch(0.55 0.1 55);
+  --chart-3: oklch(0.48 0.09 45);
+  --chart-4: oklch(0.72 0.12 70);
+  --chart-5: oklch(0.42 0.07 35);
+  --sidebar: oklch(0.985 0.008 80);
+  --sidebar-foreground: oklch(0.18 0.01 80);
+  --sidebar-primary: oklch(0.18 0.01 80);
+  --sidebar-primary-foreground: oklch(0.985 0.008 80);
+  --sidebar-accent: oklch(0.62 0.13 65);
+  --sidebar-accent-foreground: oklch(0.985 0.008 80);
+  --sidebar-border: oklch(0.88 0.01 80 / 60%);
+  --sidebar-ring: oklch(0.62 0.13 65);
+}
+
+/* KIPLAN IP — Dark mode: deep ink / warm ivory / amber */
+.dark {
+  --background: oklch(0.14 0.008 80);
+  --foreground: oklch(0.92 0.012 80);
+  --card: oklch(0.18 0.008 80);
+  --card-foreground: oklch(0.92 0.012 80);
+  --popover: oklch(0.2 0.01 80);
+  --popover-foreground: oklch(0.92 0.012 80);
+  /* Primary = warm ivory */
+  --primary: oklch(0.92 0.012 80);
+  --primary-foreground: oklch(0.14 0.008 80);
+  --secondary: oklch(0.24 0.008 80);
+  --secondary-foreground: oklch(0.92 0.012 80);
+  --muted: oklch(0.32 0.008 80);
+  --muted-foreground: oklch(0.68 0.012 80);
+  /* Accent = warm amber */
+  --accent: oklch(0.72 0.13 65);
+  --accent-foreground: oklch(0.14 0.008 80);
+  --destructive: oklch(0.62 0.2 25);
+  --border: oklch(0.45 0.01 80 / 40%);
+  --input: oklch(0.45 0.01 80 / 60%);
+  --ring: oklch(0.72 0.13 65);
+  --chart-1: oklch(0.72 0.13 65);
+  --chart-2: oklch(0.65 0.1 55);
+  --chart-3: oklch(0.58 0.09 45);
+  --chart-4: oklch(0.78 0.12 70);
+  --chart-5: oklch(0.5 0.07 35);
+  --sidebar: oklch(0.18 0.008 80);
+  --sidebar-foreground: oklch(0.92 0.012 80);
+  --sidebar-primary: oklch(0.92 0.012 80);
+  --sidebar-primary-foreground: oklch(0.14 0.008 80);
+  --sidebar-accent: oklch(0.72 0.13 65);
+  --sidebar-accent-foreground: oklch(0.14 0.008 80);
+  --sidebar-border: oklch(0.45 0.01 80 / 40%);
+  --sidebar-ring: oklch(0.72 0.13 65);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+  ::selection {
+    background: oklch(0.62 0.13 65 / 25%);
+  }
+  .dark ::selection {
+    background: oklch(0.72 0.13 65 / 30%);
+  }
+}
+
+/* === Japanese typography — scoped to <html lang="ja"> ONLY ===
+   Strategy: instead of trying to override `.font-sans` directly (which lives
+   in Tailwind 4's @layer utilities and would win over any rule in @layer base
+   regardless of specificity), we override the `--font-inter` CSS variable
+   ITSELF when <html lang="ja"> is active. Since `.font-sans` resolves to
+   `var(--font-inter)`, overriding the variable makes `.font-sans` naturally
+   emit the Japanese font stack — no specificity war required.
+
+   This is the cleanest approach because it:
+   - Works regardless of Tailwind 4's cascade layer ordering
+   - Does NOT affect Chinese (zh-CN), Nepali (ne), or English (en)
+   - Only fires when document.documentElement.lang === "ja" (set by LanguageProvider)
+   - Preserves all the existing Tailwind utility classes (.font-sans, .font-mono,
+     etc.) — they continue to work, just with the Japanese font stack as the
+     resolved value of --font-inter when JA is active
+
+   Font stack tuned for Japanese:
+   - Hiragino Sans / Hiragino Kaku Gothic ProN — macOS default Japanese
+   - Yu Gothic / Yu Gothic UI — Windows default Japanese
+   - Meiryo — older Windows Japanese fallback
+   - Noto Sans JP / Noto Sans CJK JP — high-quality open fallback
+   - Inter (original value) — keeps Latin text rendered with Inter for
+     consistency with the rest of the design system
+   - ui-sans-serif / system-ui / sans-serif — last-resort fallbacks
+
+   Letter-spacing tightened to 0.02em (Japanese typesetting convention —
+   kanji group better with slight tightening, not Latin's 0).
+   Line-height bumped to 1.85 for prose — Japanese kanji are visually
+   heavier than Latin glyphs and benefit from extra vertical breathing room.
+   Heading letter-spacing tightened to 0.01em for the same reason. */
+html[lang="ja"] body {
+  --font-inter:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Yu Gothic UI",
+    "Meiryo", "Noto Sans JP", "Noto Sans CJK JP",
+    "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+html[lang="ja"] .prose p,
+html[lang="ja"] .prose-sm p {
+  line-height: 1.85;
+}
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="ja"] h3 {
+  letter-spacing: 0.01em;
+}
+/* Mono labels (footer headings, breadcrumb pathbar, path bar) keep their
+   mono family for ASCII code/labels but get a Japanese-aware fallback
+   chain so any Japanese characters inside them render correctly.
+   Same variable-override strategy: override --font-geist-mono when JA is
+   active so .font-mono naturally picks up the Japanese-aware stack. */
+html[lang="ja"] body {
+  --font-geist-mono:
+    "Geist Mono", "Hiragino Sans", "Yu Gothic", "Meiryo", "Noto Sans JP",
+    ui-monospace, monospace;
+}
+
+/* === Nepali (Devanagari) typography — scoped to <html lang="ne"> ONLY ===
+   Same strategy as Japanese: override the --font-inter CSS variable so
+   .font-sans naturally resolves to the Devanagari font stack.
+
+   Does NOT affect English (en), Chinese (zh-CN), or Japanese (ja).
+
+   Font stack tuned for Nepali/Devanagari:
+   - Noto Sans Devanagari / Noto Sans CJK Devanagari — high-quality open font
+   - Mukta — popular free Nepali font
+   - Mangal — Windows system Devanagari font
+   - Aparajita — Windows system Devanagari font
+   - Inter — keeps Latin text rendered with Inter for consistency
+   - ui-sans-serif / system-ui / sans-serif — last-resort fallbacks */
+html[lang="ne"] body {
+  --font-inter:
+    "Noto Sans Devanagari", "Noto Sans CJK Devanagari",
+    "Mukta", "Mangal", "Aparajita",
+    "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+html[lang="ne"] .prose p,
+html[lang="ne"] .prose-sm p {
+  line-height: 1.8;
+}
+html[lang="ne"] body {
+  --font-geist-mono:
+    "Geist Mono", "Noto Sans Devanagari", "Mangal",
+    ui-monospace, monospace;
+}
+
+/* === Chinese (Simplified) typography — scoped to <html lang="zh-CN"> ONLY ===
+   Same strategy: override --font-inter so .font-sans resolves to the
+   Chinese font stack.
+
+   Does NOT affect English (en), Nepali (ne), or Japanese (ja).
+   Critically: does NOT affect html[lang="ja"] — Chinese and Japanese have
+   completely independent font stacks so switching to Chinese does not alter
+   Japanese typography and vice versa.
+
+   Font stack tuned for Simplified Chinese:
+   - Noto Sans SC / Noto Sans CJK SC — high-quality open font
+   - PingFang SC — macOS system font for Simplified Chinese
+   - Microsoft YaHei (微软雅黑) — Windows system font for Simplified Chinese
+   - Source Han Sans SC (思源黑体) — Adobe/Google open font
+   - Inter — keeps Latin text rendered with Inter for consistency
+   - ui-sans-serif / system-ui / sans-serif — last-resort fallbacks */
+html[lang="zh-CN"] body {
+  --font-inter:
+    "Noto Sans SC", "Noto Sans CJK SC",
+    "PingFang SC", "Microsoft YaHei", "Source Han Sans SC",
+    "Inter", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+html[lang="zh-CN"] .prose p,
+html[lang="zh-CN"] .prose-sm p {
+  line-height: 1.8;
+}
+html[lang="zh-CN"] body {
+  --font-geist-mono:
+    "Geist Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    ui-monospace, monospace;
+}
+
+/* === KIPLAN custom utilities === */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+  .font-sans-kiplan {
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Hairline grid pattern background */
+  .bg-grid-hairline {
+    background-image:
+      linear-gradient(to right, oklch(0.62 0.13 65 / 6%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.62 0.13 65 / 6%) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .dark .bg-grid-hairline {
+    background-image:
+      linear-gradient(to right, oklch(0.72 0.13 65 / 8%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0.72 0.13 65 / 8%) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  /* Amber radial wash */
+  .bg-amber-wash {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      oklch(0.62 0.13 65 / 18%) 0%,
+      transparent 60%
+    );
+  }
+  .dark .bg-amber-wash {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      oklch(0.72 0.13 65 / 22%) 0%,
+      transparent 60%
+    );
+  }
+  /* Drop cap for editorial paragraphs */
+  .drop-cap::first-letter {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: 4.5rem;
+    line-height: 0.85;
+    font-weight: 500;
+    float: left;
+    margin-right: 0.75rem;
+    margin-top: 0.35rem;
+    color: oklch(0.62 0.13 65);
+  }
+  .dark .drop-cap::first-letter {
+    color: oklch(0.72 0.13 65);
+  }
+  /* Subtle custom scrollbar */
+  .kiplan-scroll::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .kiplan-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .kiplan-scroll::-webkit-scrollbar-thumb {
+    background: oklch(0.62 0.13 65 / 40%);
+    border-radius: 3px;
+  }
+  .dark .kiplan-scroll::-webkit-scrollbar-thumb {
+    background: oklch(0.72 0.13 65 / 40%);
+  }
+  /* Animated dash for SVG arcs */
+  @keyframes kiplan-dash {
+    to {
+      stroke-dashoffset: -24;
+    }
+  }
+  .animate-arc-dash {
+    stroke-dasharray: 4 8;
+    animation: kiplan-dash 6s linear infinite;
+  }
+  /* Slow float */
+  @keyframes kiplan-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+  }
+  .animate-float-slow {
+    animation: kiplan-float 12s ease-in-out infinite;
+  }
+  /* Typing dots */
+  @keyframes kiplan-blink {
+    0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+    40% { opacity: 1; transform: translateY(-2px); }
+  }
+  .typing-dot {
+    animation: kiplan-blink 1.4s infinite both;
+  }
+
+  /* === Source badge color variants ===
+     Tier 1 = amber/official (existing palette token)
+     Tier 2 = slate/academic (subtle blue-gray, not indigo/blue accent)
+     Tier 3 = zinc/neutral professional
+     These utility classes are optional — the SourceBadge component also
+     emits Tailwind classes inline. Provided here for direct use in
+     data-driven lists where component composition is undesirable. */
+  .badge-tier-1 {
+    border-color: oklch(0.62 0.13 65 / 40%);
+    background: oklch(0.62 0.13 65 / 10%);
+    color: oklch(0.62 0.13 65);
+  }
+  .dark .badge-tier-1 {
+    border-color: oklch(0.72 0.13 65 / 40%);
+    background: oklch(0.72 0.13 65 / 15%);
+    color: oklch(0.72 0.13 65);
+  }
+  .badge-tier-2 {
+    border-color: oklch(0.55 0.02 250 / 30%);
+    background: oklch(0.92 0.01 250);
+    color: oklch(0.42 0.04 250);
+  }
+  .dark .badge-tier-2 {
+    border-color: oklch(0.6 0.03 250 / 40%);
+    background: oklch(0.3 0.02 250 / 60%);
+    color: oklch(0.78 0.03 250);
+  }
+  .badge-tier-3 {
+    border-color: oklch(0.6 0.005 80 / 30%);
+    background: oklch(0.92 0.005 80);
+    color: oklch(0.42 0.01 80);
+  }
+  .dark .badge-tier-3 {
+    border-color: oklch(0.5 0.005 80 / 40%);
+    background: oklch(0.28 0.005 80 / 60%);
+    color: oklch(0.78 0.01 80);
+  }
+
+  /* === Status badge variants (color-coded per spec §4) ===
+     Verified/Official/Party/Member/Published → positive (emerald)
+     Verification required/Draft/Working Paper → caution (amber)
+     Source unavailable/Unverifiable/Not a Party/Historical → muted (zinc) */
+  .badge-status-positive {
+    border-color: oklch(0.62 0.13 65 / 35%);
+    background: oklch(0.62 0.13 65 / 12%);
+    color: oklch(0.45 0.1 65);
+  }
+  .dark .badge-status-positive {
+    border-color: oklch(0.72 0.13 65 / 40%);
+    background: oklch(0.72 0.13 65 / 18%);
+    color: oklch(0.8 0.1 65);
+  }
+  .badge-status-caution {
+    border-color: oklch(0.62 0.13 65 / 30%);
+    background: oklch(0.62 0.13 65 / 8%);
+    color: oklch(0.5 0.1 65);
+  }
+  .dark .badge-status-caution {
+    border-color: oklch(0.72 0.13 65 / 35%);
+    background: oklch(0.72 0.13 65 / 12%);
+    color: oklch(0.78 0.1 65);
+  }
+  .badge-status-muted {
+    border-color: oklch(0.6 0.005 80 / 30%);
+    background: oklch(0.92 0.005 80);
+    color: oklch(0.42 0.01 80);
+  }
+  .dark .badge-status-muted {
+    border-color: oklch(0.5 0.005 80 / 40%);
+    background: oklch(0.28 0.005 80 / 60%);
+    color: oklch(0.78 0.01 80);
+  }
+  .badge-status-critical {
+    border-color: oklch(0.55 0.18 25 / 35%);
+    background: oklch(0.55 0.18 25 / 10%);
+    color: oklch(0.45 0.18 25);
+  }
+  .dark .badge-status-critical {
+    border-color: oklch(0.62 0.2 25 / 40%);
+    background: oklch(0.62 0.2 25 / 15%);
+    color: oklch(0.78 0.18 25);
+  }
+
+  /* === Hairline breadcrumb ===
+     Thin separator, low-contrast, no underline, no bullets. */
+  .breadcrumb-hairline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: oklch(0.48 0.015 80);
+  }
+  .dark .breadcrumb-hairline {
+    color: oklch(0.68 0.012 80);
+  }
+  .breadcrumb-hairline a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 120ms ease;
+  }
+  .breadcrumb-hairline a:hover {
+    color: oklch(0.62 0.13 65);
+  }
+  .dark .breadcrumb-hairline a:hover {
+    color: oklch(0.72 0.13 65);
+  }
+  .breadcrumb-hairline [aria-current="page"] {
+    color: oklch(0.62 0.13 65);
+  }
+  .dark .breadcrumb-hairline [aria-current="page"] {
+    color: oklch(0.72 0.13 65);
+  }
+  .breadcrumb-hairline-sep {
+    color: oklch(0.62 0.13 65 / 30%);
+    user-select: none;
+  }
+}
+
+/* === Reduced-motion policy ===
+   Disables framer-motion transitions, transform animations, and long
+   keyframe animations. Content remains visible (no opacity:0 freeze). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Framer Motion sets inline opacity/transform during reveal — restore visible
+     state so users with reduced motion don't see invisible sections. */
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .animate-float-slow,
+  .animate-arc-dash,
+  .typing-dot {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === Refinement layer — type scale, link treatment, focus, prose polish ===
+   These are additive refinements to the existing design system.
+   They do not change the palette, typography families, or layout primitives. */
+@layer base {
+  /* Tighter display headings on small screens; preserve scale on larger */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  /* Consistent, accessible focus ring across all interactive elements.
+     Uses the existing amber accent token so focus is visible in both themes. */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Default link treatment — subtle, never decorative.
+     Body links get a hairline underline that strengthens on hover. */
+  .prose a,
+  p a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: oklch(0.62 0.13 65 / 35%);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 120ms ease, color 120ms ease;
+  }
+  .prose a:hover,
+  p a:hover {
+    text-decoration-color: currentColor;
+  }
+  .dark .prose a,
+  .dark p a {
+    text-decoration-color: oklch(0.72 0.13 65 / 40%);
+  }
+
+  /* Prose refinements for research-style long-form content */
+  .prose p {
+    text-wrap: pretty;
+  }
+  .prose h3 {
+    letter-spacing: -0.01em;
+  }
+
+  /* Selection of paragraph immediately following a heading — slightly tighter top spacing
+     for a more composed editorial feel. */
+  .prose h3 + p {
+    margin-top: 0.5rem;
+  }
+
+  /* Vertical rhythm for body text inside cards/modules — 1.7 line-height for readability */
+  .prose-sm p {
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  /* Refined link underlined style for inline body links — preserves existing
+     "no underline" treatment for nav/buttons while letting prose links read
+     as proper hyperlinks. */
+  .link-underline {
+    text-decoration: underline;
+    text-decoration-color: oklch(0.62 0.13 65 / 40%);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 120ms ease;
+  }
+  .link-underline:hover {
+    text-decoration-color: currentColor;
+  }
+  .dark .link-underline {
+    text-decoration-color: oklch(0.72 0.13 65 / 45%);
+  }
+
+  /* Section divider hairline — slightly warmer than the default border token
+     to better separate sections on the ivory background. */
+  .section-divider {
+    border-top: 1px solid oklch(0.82 0.012 80 / 70%);
+  }
+  .dark .section-divider {
+    border-top: 1px solid oklch(0.4 0.008 80 / 60%);
+  }
+
+  /* Card hover lift refinement — preserve the existing -translate-y-0.5 but add
+     a subtle shadow for depth that works in both themes. */
+  .card-hover-lift {
+    transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 180ms ease,
+                box-shadow 180ms ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 2px oklch(0.18 0.01 80 / 4%),
+                0 4px 12px oklch(0.18 0.01 80 / 6%);
+  }
+  .dark .card-hover-lift:hover {
+    box-shadow: 0 1px 2px oklch(0 0 0 / 20%),
+                0 4px 12px oklch(0 0 0 / 30%);
+  }
+
+  /* Path-bar mono refinement — makes the navbar's path indicator read as
+     an active breadcrumb rather than raw text. */
+  .pathbar-mono {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* === Footer component classes ===
+     Extracted from the Footer component so the markup stays readable
+     and the typography/spacing can be tuned in one place. */
+  .footer-nav-col {
+    min-width: 0;
+  }
+  .footer-col-heading {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .footer-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Tight gap because each .footer-link already has vertical padding for tap targets. */
+    gap: 0;
+  }
+  .footer-link {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    /* Padding gives the link a 36px tap target height (13px text + 1.4 line-height
+       ≈ 18px, plus 9px top + 9px bottom padding = 36px). Mobile users get
+       comfortable tap targets without the link visually growing. */
+    padding: 0.3rem 0;
+    transition: color 120ms ease, transform 120ms ease;
+  }
+  .footer-link:hover {
+    color: var(--foreground);
+  }
+  .footer-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* === KIPLAN institutional band — very light blue / blue-gray container
+   that wraps the LAYER 2 institutional/contact section of the footer.
+   Used to visually separate the institutional information (parent
+   organisation, IP division statement, contact details, KIPLAN Family)
+   from the main footer navigation above and the legal utility bar below.
+
+   The blue is deliberately very subtle and desaturated — it reads as
+   an institutional information band, not a marketing banner. Uses
+   oklch() to stay consistent with the existing palette tokens.
+   Light mode: very pale blue-gray wash on near-white.
+   Dark mode: slightly lifted blue-tinted ink panel.
+
+   Defined OUTSIDE @layer so Tailwind 4's content-scanning purge does
+   not drop it — this is plain component CSS, not a Tailwind utility. */
+.kiplan-institutional-band {
+  background-color: oklch(0.965 0.012 240);
+  border-top: 1px solid oklch(0.86 0.015 240 / 70%);
+  border-bottom: 1px solid oklch(0.86 0.015 240 / 70%);
+}
+.dark .kiplan-institutional-band {
+  background-color: oklch(0.21 0.012 240);
+  border-top: 1px solid oklch(0.4 0.012 240 / 50%);
+  border-bottom: 1px solid oklch(0.4 0.012 240 / 50%);
+}
+
+/* === KIPLAN legal band — deep-blue container that holds the legal
+   utility links, copyright line, and full disclaimer paragraph.
+   Sits immediately below the light-blue institutional band.
+
+   The deep blue is a single, restrained institutional ink — darker
+   than the institutional band but not a saturated marketing colour.
+   Text inside uses a light tint for readable contrast against the
+   deep background.
+
+   Defined OUTSIDE @layer so Tailwind 4's content-scanning purge does
+   not drop it — this is plain component CSS, not a Tailwind utility. */
+.kiplan-legal-band {
+  background-color: oklch(0.26 0.04 250);
+  color: oklch(0.88 0.015 240);
+}
+.dark .kiplan-legal-band {
+  background-color: oklch(0.18 0.04 250);
+  color: oklch(0.84 0.015 240);
+}
+/* Legal links inside the deep-blue band — light tint, hover brightens to near-white */
+.kiplan-legal-band a {
+  color: oklch(0.82 0.015 240);
+  transition: color 120ms ease;
+}
+.kiplan-legal-band a:hover {
+  color: oklch(0.98 0.005 240);
+}
+.kiplan-legal-band a:focus-visible {
+  outline: 2px solid oklch(0.72 0.13 65);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Legal separators (·) inside the deep-blue band — dimmer than the links */
+.kiplan-legal-band .kiplan-legal-sep {
+  color: oklch(0.6 0.015 240);
+}
+
+/* === Hero background image — ip-background.jpg
+   Used as the full-bleed background of the Home page hero section.
+   Kathmandu cityscape with traditional tiered temples + snow-capped
+   mountains + a digital world map graphic. Positioned center so the
+   temples and mountains (the image's main visual interest) remain
+   visible across desktop, tablet, and mobile viewports.
+
+   background-size: cover ensures the image fills the hero area on
+   all viewport sizes without distortion.
+
+   Defined OUTSIDE @layer so Tailwind 4's content-scanning purge
+   does not drop it. The companion overlay class below provides a
+   subtle vertical gradient for text readability — restrained, not
+   opaque, so the photograph remains clearly visible. */
+.kiplan-hero-bg {
+  background-image: url("/ip-background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 640px) {
+  .kiplan-hero-bg {
+    /* On mobile, keep the temples + mountains centered and visible. */
+    background-position: center center;
+  }
+}
+
+/* Readability overlay for the hero background image.
+   A combined horizontal + vertical gradient:
+   - Horizontally: strongest (darkest) on the LEFT where the hero text
+     sits, gradually fading to transparent toward the RIGHT so the
+     Kathmandu photograph remains clearly visible on the right side.
+   - Vertically: slightly darker at the very top (behind the navbar)
+     fading to transparent at the bottom.
+   Maximum opacity ~60% on the left — never fully opaque, always
+   shows the photograph beneath. */
+.kiplan-hero-overlay {
+  background:
+    linear-gradient(
+      to right,
+      oklch(0.14 0.01 80 / 0.60) 0%,
+      oklch(0.14 0.01 80 / 0.45) 30%,
+      oklch(0.14 0.01 80 / 0.25) 55%,
+      oklch(0.14 0.01 80 / 0.10) 75%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      oklch(0.14 0.01 80 / 0.35) 0%,
+      oklch(0.14 0.01 80 / 0.15) 30%,
+      transparent 60%
+    );
+}
+.dark .kiplan-hero-overlay {
+  background:
+    linear-gradient(
+      to right,
+      oklch(0.10 0.01 80 / 0.70) 0%,
+      oklch(0.10 0.01 80 / 0.55) 30%,
+      oklch(0.10 0.01 80 / 0.30) 55%,
+      oklch(0.10 0.01 80 / 0.12) 75%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      oklch(0.10 0.01 80 / 0.45) 0%,
+      oklch(0.10 0.01 80 / 0.20) 30%,
+      transparent 60%
+    );
+}
+
