@@ -99,10 +99,10 @@ export function LanguageSelector({ variant = "desktop" }: LanguageSelectorProps)
               role="menuitemradio"
               aria-checked={isActive}
               aria-label={`Switch to ${lang.nativeLabel}`}
-              onSelect={(e) => {
-                e.preventDefault();
+              onSelect={() => {
                 setLanguage(lang.code);
               }}
+
               className="gap-2"
             >
               <span className="flex-1 truncate flex items-center gap-2">
