@@ -14,14 +14,14 @@ export function ConsultationSection() {
     { icon: <MessageCircle className="h-4 w-4" />, label: t("contact.generalContact"), href: "/contact/general", body: t("contact.generalContactBody") },
   ];
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40">
       <SectionShell>
         <SectionHeader
           eyebrow={t("contact.eyebrow")}
           title={t("contact.title")}
           subtitle={t("contact.subtitle")}
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PATHS.map((p, i) => (
             <Link
               key={i}

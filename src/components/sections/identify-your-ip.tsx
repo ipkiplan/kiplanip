@@ -39,7 +39,7 @@ export function IdentifyYourIP() {
   ];
 
   return (
-    <MotionSection id="identify-your-ip" className="py-20 md:py-28 border-t border-border/40 bg-card/20">
+    <MotionSection id="identify-your-ip" className="py-16 md:py-24 border-t border-border/40 bg-card/20">
       <SectionShell>
         <SectionHeader
           eyebrow={t("identify.eyebrow")}

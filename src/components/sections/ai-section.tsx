@@ -20,9 +20,9 @@ export function AISection() {
     { icon: <Database className="h-3 w-3" />, label: t("ai.importantQualification"), body: t("ai.importantQualificationBody") },
   ];
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40">
       <SectionShell>
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
             <SectionHeader
               eyebrow={t("ai.eyebrow")}

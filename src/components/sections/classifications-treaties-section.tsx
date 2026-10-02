@@ -9,14 +9,14 @@ import { useTranslation } from "@/i18n/provider";
 export function ClassificationsTreatiesSection() {
   const { t } = useTranslation();
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40 bg-card/20">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40 bg-card/20">
       <SectionShell>
         <SectionHeader
           eyebrow={t("classTreaties.eyebrow")}
           title={t("classTreaties.title")}
           subtitle={t("classTreaties.subtitle")}
         />
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
           <div>
             <div className="mb-4 flex items-center justify-between">
               <h3 className="font-display text-xl font-medium text-foreground">{t("classTreaties.classificationSystems")}</h3>

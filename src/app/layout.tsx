@@ -84,6 +84,9 @@ export const metadata: Metadata = {
     description:
       "Protecting ideas. Understanding rights. Connecting Nepal with the world.",
   },
+  verification: {
+    google: "ovxNJ_vy_tlEWQMPz2GIkS6uIdIQS0a5PZguCPOKPAg",
+  },
 };
 
 export default function RootLayout({

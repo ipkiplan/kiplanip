@@ -17,9 +17,9 @@ export function NepalSection() {
     { label: t("nepal.pctMadridHague"), status: t("nepal.verificationRequired") },
   ];
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40 bg-card/20">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40 bg-card/20">
       <SectionShell>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <SectionHeader
               eyebrow={t("nepal.eyebrow")}

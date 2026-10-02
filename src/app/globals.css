@@ -758,6 +758,12 @@ html[lang="zh-CN"] body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  /* Subtle image-level refinement: slightly brighter and slightly desaturated
+     so the photograph feels lighter, softer, and less heavily coloured behind
+     the text. Does NOT alter the original image file — pure CSS filter.
+     Values chosen to be barely perceptible individually but cumulatively
+     noticeable as "softer, more natural". */
+  filter: brightness(1.08) saturate(0.92);
 }
 @media (max-width: 640px) {
   .kiplan-hero-bg {
@@ -779,17 +785,18 @@ html[lang="zh-CN"] body {
   background:
     linear-gradient(
       to right,
-      oklch(0.14 0.01 80 / 0.60) 0%,
-      oklch(0.14 0.01 80 / 0.45) 30%,
-      oklch(0.14 0.01 80 / 0.25) 55%,
-      oklch(0.14 0.01 80 / 0.10) 75%,
-      transparent 100%
+      oklch(0.14 0.01 80 / 0.64) 0%,
+      oklch(0.14 0.01 80 / 0.50) 25%,
+      oklch(0.14 0.01 80 / 0.32) 50%,
+      oklch(0.14 0.01 80 / 0.14) 70%,
+      transparent 90%
     ),
     linear-gradient(
       to bottom,
-      oklch(0.14 0.01 80 / 0.35) 0%,
-      oklch(0.14 0.01 80 / 0.15) 30%,
-      transparent 60%
+      oklch(0.14 0.01 80 / 0.34) 0%,
+      oklch(0.14 0.01 80 / 0.20) 25%,
+      oklch(0.14 0.01 80 / 0.08) 50%,
+      transparent 70%
     );
 }
 .dark .kiplan-hero-overlay {
@@ -797,16 +804,17 @@ html[lang="zh-CN"] body {
     linear-gradient(
       to right,
       oklch(0.10 0.01 80 / 0.70) 0%,
-      oklch(0.10 0.01 80 / 0.55) 30%,
-      oklch(0.10 0.01 80 / 0.30) 55%,
-      oklch(0.10 0.01 80 / 0.12) 75%,
-      transparent 100%
+      oklch(0.10 0.01 80 / 0.54) 25%,
+      oklch(0.10 0.01 80 / 0.36) 50%,
+      oklch(0.10 0.01 80 / 0.16) 70%,
+      transparent 90%
     ),
     linear-gradient(
       to bottom,
-      oklch(0.10 0.01 80 / 0.45) 0%,
-      oklch(0.10 0.01 80 / 0.20) 30%,
-      transparent 60%
+      oklch(0.10 0.01 80 / 0.42) 0%,
+      oklch(0.10 0.01 80 / 0.23) 25%,
+      oklch(0.10 0.01 80 / 0.10) 50%,
+      transparent 70%
     );
 }
 

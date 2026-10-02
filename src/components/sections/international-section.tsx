@@ -16,7 +16,7 @@ export function InternationalSection() {
     { label: t("international.kathmandu"), body: t("international.kathmanduBody"), href: "/about/kiplan-ip" },
   ];
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40">
       <SectionShell>
         <SectionHeader
           eyebrow={t("international.eyebrow")}

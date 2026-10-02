@@ -17,14 +17,14 @@ const PILLAR_KEYS = [
 export function ResearchSection() {
   const { t } = useTranslation();
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40">
       <SectionShell>
         <SectionHeader
           eyebrow={t("research.eyebrow")}
           title={t("research.title")}
           subtitle={t("research.subtitle")}
         />
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PILLAR_KEYS.map((p, i) => (
             <Link
               key={i}

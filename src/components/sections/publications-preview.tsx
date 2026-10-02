@@ -11,7 +11,7 @@ export function PublicationsPreview() {
   const { t } = useTranslation();
   const featured = PUBLICATIONS.slice(0, 4);
   return (
-    <MotionSection className="py-20 md:py-28 border-t border-border/40 bg-card/20">
+    <MotionSection className="py-16 md:py-24 border-t border-border/40 bg-card/20">
       <SectionShell>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionHeader
@@ -24,7 +24,7 @@ export function PublicationsPreview() {
             {t("footer.publications")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {featured.map((p) => {
             const Icon = p.type.includes("Update") ? <BookMarked className="h-4 w-4" /> : p.type.includes("Working") ? <ScrollText className="h-4 w-4" /> : <FileText className="h-4 w-4" />;
             return (
